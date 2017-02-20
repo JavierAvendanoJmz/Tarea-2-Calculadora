@@ -98,6 +98,12 @@ public class Controlador {
             l2.agregarAtras(n);
             aux = br.read();
         }
+        if(l.comparar(l2)<0) {
+            Lista l3 = new Lista();            
+            l3.setInicio(l.getInicio());
+            l.setInicio(l2.getInicio());
+            l2.setInicio(l3.getInicio());
+        }
         br.close();
     }
     

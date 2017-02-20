@@ -13,6 +13,28 @@ public class Lista {
     
     private Nodo inicio;
     
+    public int comparar(Lista l) {
+        int t = this.tamano();
+        int t2 = l.tamano();
+        if(t < t2) {
+            return -1;            
+        } else if(t > t2) {
+            return 1;
+        } else {
+            Nodo aux = this.getInicio();
+            Nodo aux2 = l.getInicio();
+            while(aux != null && aux.getNumero() != aux2.getNumero()) {
+                aux = aux.getSiguiente();
+                aux2 = aux2.getSiguiente();
+            }
+            if(aux == null) {
+                return 0;
+            } else {
+                return aux.getNumero() - aux2.getNumero();
+            }
+        }        
+    }
+    
     public Resul dividir(Lista l){        
         Lista dividendo = this.invertir();        
         Lista divisor = l.invertir();

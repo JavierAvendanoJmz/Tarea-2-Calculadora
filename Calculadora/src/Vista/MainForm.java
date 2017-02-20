@@ -25,14 +25,14 @@ public class MainForm extends JFrame {
     
     public MainForm() {
         super("Super Calculadora");
-        super.setSize(720, 115);
+        super.setSize(280, 65);
         super.setResizable(false);
         super.setLayout(new BorderLayout());
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         controlador = new Controlador();
-        super.add(pnlSuperior(), BorderLayout.NORTH);
+        //super.add(pnlSuperior(), BorderLayout.NORTH);
         super.add(pnlBotones(), BorderLayout.CENTER);
-        super.add(pnlInferior(), BorderLayout.SOUTH);
+        //super.add(pnlInferior(), BorderLayout.SOUTH);
         super.setVisible(true);
     }
     
