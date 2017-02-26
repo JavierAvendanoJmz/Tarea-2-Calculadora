@@ -39,7 +39,7 @@ public class MainForm extends JFrame {
     private JPanel pnlInferior() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
-        panel.add(new JLabel("La salida constara de 5 lineas que son los resultados de las operaciones: suma, resta, multiplicacion, division, y residuo"));
+//        panel.add(new JLabel("La salida constara de 5 lineas que son los resultados de las operaciones: suma, resta, multiplicacion, division, y residuo"));
         return panel;
     }
     
@@ -67,7 +67,11 @@ public class MainForm extends JFrame {
 //                        System.out.println("2: "+resta);
                         Lista multiplicacion = controlador.multiplicar(l.clonar(), l2.clonar());
 //                        System.out.println("3: "+multiplicacion);
-                        Resul division = controlador.dividir(l.clonar(), l2.clonar());
+                        Resul division = new Resul();
+                        try { division = controlador.dividir(l.clonar(), l2.clonar()); } catch(Exception ex) {                            
+                            division.setCociente(new Lista(new Nodo(0)));
+                            division.setResiduo(new Lista(new Nodo(0)));
+                        }
 //                        System.out.println("4.1: "+division.getCociente());
 //                        System.out.println("4.2: "+division.getResiduo());
                         try {
@@ -96,7 +100,7 @@ public class MainForm extends JFrame {
     private JPanel pnlSuperior() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
-        panel.add(new JLabel("Formato de entrada .txt: 2 numeros positivos separados por un salto de linea, considerando el mayor antes que el menor"));
+//        panel.add(new JLabel("Formato de entrada .txt: 2 numeros positivos separados por un salto de linea, considerando el mayor antes que el menor"));
         return panel;
     }
 }
